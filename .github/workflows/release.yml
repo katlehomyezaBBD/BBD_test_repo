@@ -1,0 +1,38 @@
+name: Release Pipeline
+
+on:
+  push:
+    tags:
+      - 'v*'  # This triggers the workflow when a tag like 'v1.0.0' is pushed.
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+   
+
+      # Step 4: Package the application into a ZIP file
+      - name: Create ZIP release artifact
+        run: |
+          # Create a directory for the release artifact
+          mkdir release
+          # Copy the application files into the release directory
+          cp -r * release/
+          # Change into the release directory
+          cd release
+          # Create the ZIP file with the tag name (e.g., v1.0.0.zip)
+          zip -r "../my-api-${GITHUB_REF##*/}.zip" .
+
+      # Step 5: Upload the ZIP file as a release asset
+      - name: Upload ZIP to GitHub Releases
+        uses: gh-actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./my-api-${GITHUB_REF##*/}.zip  # Path to the ZIP file created
+          asset_name: my-api-${GITHUB_REF##*/}.zip  # Name of the ZIP file
+          asset_content_type: application/zip  # Content type for the ZIP file
