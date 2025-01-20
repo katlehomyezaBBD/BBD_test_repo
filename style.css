@@ -1,0 +1,20 @@
+#h1{
+  font-family: 'Arial', sans-serif;
+  font-size: 3em; /* Large text size */
+  font-weight: 700; /* Bold text */
+  color: #fff; /* Text color */
+  background: linear-gradient(45deg, #ff6b81, #f06595, #d4a5a5); /* Gradient background */
+  background-clip: text; /* Clip the background gradient to the text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow to give depth */
+  letter-spacing: 2px; /* Slightly spaced out letters */
+  text-align: center; /* Center-align the text */
+  margin: 20px 0; /* Margin for spacing */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+#h1:hover {
+  transform: scale(1.1); /* Slightly enlarge the text on hover */
+  color: #fff; /* Make the text white on hover */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
+}
