@@ -30,7 +30,4 @@ jobs:
         npm install express
         npm install jest
 
-    # Step 4: Build the application (if necessary)
-    # For this example, you don't need a build step, but you could add one if you want to transpile code or bundle assets
-    - name: Build app
-      run: npm run build  # Corrected indentation here
+   
