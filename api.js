@@ -11,6 +11,7 @@ app.get('/messages', (req, res) => {
 });
 
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+// Listen on all network interfaces (0.0.0.0) to make the app publicly accessible
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running at http://0.0.0.0:${port}`);
 });
