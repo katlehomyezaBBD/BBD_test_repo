@@ -1,0 +1,35 @@
+name: Build and Run API
+
+on:
+  push:
+    branches:
+      - main   # Trigger the workflow on pushes to the `main` branch
+  pull_request:
+    branches:
+      - main   # Trigger the workflow on PRs targeting the `main` branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # The environment to run the job (Ubuntu)
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: Set up Node.js environment
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Specify the Node.js version (e.g., 16)
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        npm install  
+        npm install express
+        npm install jest
+
+
+
+  
