@@ -1,0 +1,19 @@
+{
+  "name": "bbd_test_repo",
+  "version": "1.0.0",
+  "description": "test deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katlehomyezaBBD/BBD_test_repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katlehomyezaBBD/BBD_test_repo/issues"
+  },
+  "homepage": "https://github.com/katlehomyezaBBD/BBD_test_repo#readme"
+}
